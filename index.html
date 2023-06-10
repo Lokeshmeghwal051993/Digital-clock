@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital-watch</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(79, 189, 79);
+        }
+
+        #time {
+
+            margin: auto;
+            /* margin-top:15%; */
+            width: 70vw;
+            text-align: center;
+            height: 15vw;
+            /* border: 2px solid black; */
+
+            font-size: 10vw;
+            padding: 2vw 0px;
+            color: rgb(13, 215, 13);
+            border-radius: 30px;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 20vw;
+            margin-left: 42%;
+            font-size: 1.5em;
+            padding: 10px;
+            background-color: pink;
+            color: white;
+            border-radius: 10px 10px 10px 10px;
+            border-style: none;
+        }
+
+        h1 {
+            margin: auto;
+            margin-bottom: 20px;
+            text-align: center;
+            margin-top: 10%;
+            font-size: 5vw;
+            width: 50%;
+            letter-spacing: 5px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Digital-watch</h1>
+    <p id="time"></p>
+    <button onclick="stopTime()" ondblclick="stopColor()">stop-time</button>
+    <script>
+        const timeInterval = setInterval(time, 1000);
+
+        function time() {
+
+            const d = new Date();
+            document.getElementById("time").innerHTML = d.toLocaleTimeString();
+
+        }
+        function stopTime() {
+            clearInterval(timeInterval);
+        }
+
+        // p tag background color codding
+        myInterval = setInterval(setColor, 250);
+
+        function setColor() {
+            let x = document.getElementById("time");
+            x.style.backgroundColor = x.style.backgroundColor == "white" ? "pink" : "white";
+           
+        }
+
+        function stopColor() {
+            clearInterval(myInterval);
+        }
+
+        // color codding start
+       
+    </script>
+</body>
+
+</html>
